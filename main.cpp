@@ -55,13 +55,13 @@ private slots:
     void setupAnimation() {
         QSequentialAnimationGroup *sequence = new QSequentialAnimationGroup(this);
         QPropertyAnimation *fadeIn = new QPropertyAnimation(opacityEffect, "opacity");
-        fadeIn->setDuration(300);
+        fadeIn->setDuration(100);
         fadeIn->setStartValue(0.0);
         fadeIn->setEndValue(1.0);
         QPauseAnimation *pause = new QPauseAnimation(this);
         pause->setDuration(10000);
         QPropertyAnimation *fadeOut = new QPropertyAnimation(opacityEffect, "opacity");
-        fadeOut->setDuration(1000);
+        fadeOut->setDuration(200);
         fadeOut->setStartValue(1.0);
         fadeOut->setEndValue(0.0);
 
@@ -148,36 +148,37 @@ private:
 
     void setRandomGreeting() {
         QStringList greetings = {
-            "寒冬已至，愿温暖常伴你左右！",
-            "雪花飘落，愿你的生活如诗如画！",
-            "冬日暖阳，愿你心中充满希望！",
-            "寒风凛冽，愿你的心依然温暖！",
-            "瑞雪兆丰年，愿你收获满满！",
-            "冬日安康，愿健康与你同行！",
-            "白雪皑皑，愿你的世界纯净美好！",
-            "冬日漫长，愿快乐永不缺席！",
-            "天寒地冻，愿你的心依然火热！",
-            "冬日静好，愿岁月温柔待你！",
-            "寒风刺骨，愿温暖永驻心间！",
-            "冬日暖炉，愿幸福围绕着你！",
-            "雪花飞舞，愿你的梦想绽放！",
-            "冬日祝福，愿快乐与你同在！",
-            "冰天雪地，愿你的热情不减！",
-            "冬日阳光，愿你的生活灿烂！",
-            "寒风呼啸，愿你的心依然宁静！",
-            "冬日问候，愿平安伴你左右！",
-            "白雪纷飞，愿你的世界美丽！",
-            "冬日温暖，愿幸福永驻心田！",
-            "冬日寒梅，愿你坚韧不拔！",
-            "冬日炉火，愿你温馨相伴！",
-            "冬日雪花，愿你纯洁无瑕！",
-            "冬日星空，愿你梦想璀璨！",
-            "冬日晨曦，愿你充满活力！",
-            "冬日黄昏，愿你宁静安详！",
-            "冬日思念，愿你有人牵挂！",
-            "冬日团聚，愿你家庭和睦！",
-            "冬日美食，愿你胃口大开！",
-            "冬日读书，愿你知识增长！"
+            "天冷，要暖暖的哦～",
+            "冬日安好，愿你温暖。",
+            "寒日里，愿你心暖。",
+            "冬日快乐！",
+            "雪再大，你也很暖。",
+            "照顾好自己呀。",
+            "愿你冬日不寒冷。",
+            "暖暖的，过个冬。",
+            "冬天里的小太阳～",
+            "愿你被温暖包围。",
+            "冬日安康。",
+            "暖意满满的一天！",
+            "寒冷天，暖心田。",
+            "冬日顺遂。",
+            "愿你三冬暖。",
+            "天寒心不寒。",
+            "冬日可爱，你也是～",
+            "一切安好。",
+            "温暖与你相伴。",
+            "冬日愉快！",
+            "要温暖，要快乐。",
+            "爱你，老妈~",
+            "暖暖手，暖暖心。",
+            "冬日安，心亦安。",
+            "愿你冬日可爱。",
+            "冬天快乐呀！",
+            "温暖常伴左右。",
+            "祝君冬日安。",
+            "暖暖的祝福给你～",
+            "冬日安，万事顺。",
+            "冬天里，祝你好。"
         };
 
         QRandomGenerator *generator = QRandomGenerator::global();
@@ -204,7 +205,7 @@ public:
         setupShortcuts();
         createTimer = new QTimer(this);
         connect(createTimer, &QTimer::timeout, this, &GreetingManager::createGreetingWindow);
-        createTimer->start(100);
+        createTimer->start(200);
 
         batchTimer = new QTimer(this);
         connect(batchTimer, &QTimer::timeout, this, &GreetingManager::createBatchWindows);
@@ -227,7 +228,7 @@ private slots:
         QScreen *screen = QApplication::primaryScreen();
         QRect screenGeometry = screen->geometry();
 
-        window->resize(320, 140);
+        window->resize(280, 120);
 
         QRandomGenerator *generator = QRandomGenerator::global();
         int x = generator->bounded(screenGeometry.width() - window->width());
