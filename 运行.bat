@@ -1,0 +1,1 @@
+.\build\Qt_6_8_1_mingw64-Debug\debug\WinterBlessings.exe
